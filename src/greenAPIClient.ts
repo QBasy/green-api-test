@@ -1,5 +1,6 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 const { API_URL, INSTANCE_ID, TOKEN } = process.env;
