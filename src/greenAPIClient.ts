@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const { API_URL, INSTANCE_ID, TOKEN } = process.env;
-
 const URL = `${API_URL}/waInstance${INSTANCE_ID}`;
 
 export const sendMessage = (chatId: string, message: string, quotedMessageId?: string) =>
@@ -13,5 +12,4 @@ export const sendMessage = (chatId: string, message: string, quotedMessageId?: s
 export const getChatHistory = (chatId: string, count = 5) =>
     axios.post(`${URL}/getChatHistory/${TOKEN}`, {chatId, count});
 
-export const getStateInstance = () =>
-    axios.get(`${URL}/getStateInstance/${TOKEN}`);
+export const getStateInstance = () => axios.get(`${URL}/getStateInstance/${TOKEN}`);
