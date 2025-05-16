@@ -14,7 +14,7 @@ describe('GREEN-API SendMessage UI (emulated)', (): void => {
         driver = await new Builder()
             .forBrowser('chrome')
             .build();
-// @ts-ignore
+        
         await driver.get(URL);
 
         const emailInput: WebElement = await driver.wait(until.elementLocated(By.id('login')), 10000);
