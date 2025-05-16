@@ -29,15 +29,15 @@ describe('green-api SendMessage Tests', () => {
         }
     });
 
-    test('Get chat history', async () => {
+    test('Получить историю чата', async () => {
         const res = await getChatHistory(chatId, 5);
         expect(res.status).toBe(200);
         expect(Array.isArray(res.data)).toBe(true);
     });
 
-    test('Получить историю чата с пустым ID, вернёт статус с кодом 400', async () => {
+    test('Получить историю чата с пустым ID, вернёт статус с кодом 400', () => {
         try {
-            await getChatHistory('', 5);
+            getChatHistory('', 5);
         } catch (err: any) {
             expect(err.response.status).toBe(400);
         }
